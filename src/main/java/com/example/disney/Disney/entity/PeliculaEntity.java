@@ -16,8 +16,9 @@ import lombok.Setter;
 @Setter
 
 public class PeliculaEntity {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String imagen;
@@ -47,5 +48,10 @@ public class PeliculaEntity {
                 inverseJoinColumns = @JoinColumn(name = "personaje_id")
                 )
     private Set<PersonajeEntity> personajes = new HashSet<>();
+
+    @PrePersist
+    void prePersist () {
+        setFechaCreacion(LocalDate.now());
+    }
 
 }

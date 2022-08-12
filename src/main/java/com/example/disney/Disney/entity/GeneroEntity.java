@@ -11,8 +11,9 @@ import lombok.Setter;
 @Setter
 
 public class GeneroEntity {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;

@@ -15,12 +15,12 @@ import lombok.Setter;
 
 public class PersonajeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String imagen;
     private String nombre;
-    private Integer edad;
+    private Long edad;
     private Double peso;
     private String historia;
 
